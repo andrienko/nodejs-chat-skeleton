@@ -28,15 +28,11 @@
 }
 .chat {
   font: normal 14px monospace;
+  overflow-y: auto;
+  padding-bottom: 2em;
 }
 .chat .content li {
   list-style-type: none;
-}
-.chat .content li .nick {
-  font-weight: bold;
-}
-.chat .content li .nick:after {
-  content: ':';
 }
 .chat .content li .time {
   color: #aaa;
@@ -46,6 +42,15 @@
 }
 .chat .content li .time:after {
   content: ']';
+}
+.chat .content li .nick {
+  font-weight: bold;
+}
+.chat .content li .nick:after {
+  content: ':';
+}
+.chat .content li .message {
+  white-space: pre-wrap;
 }
 .chat .content li.system {
   color: #aaa;

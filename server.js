@@ -1,34 +1,34 @@
 var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var server = express();
+var httpServer = require('http').Server(server);
+var io = require('socket.io')(httpServer);
 
 var ip = "127.0.0.1";
-//var ip = "*.*.*.*";
-var port = 8083;
-var users = {};
+var port = 8083;varusers = {};
 
-app.use(
+server.use(
   express.static(__dirname + '/public')
 );
 
-app.get('/', function (req, res) {
+server.get('/', function (req, res) {
   res.sendfile('index.html');
 });
 
 io.on('connection', function (socket) {
 
-  console.log('Someone connected!', socket.conn.remoteAddress);
+  console.log(socket.conn.remoteAddress + ' connected!');
 
   io.emit('message', {
     cls: 'system',
     name:'Bot',
     time:new Date(),
-    msg: "Welcome! This is the MOTD or something\nWelcome, again."
+    msg: "\n\nWelcome! This is the MOTD or something\nServer time is "+(new Date())
   });
 
   socket.on('message_sent', function (data) {
-    io.emit('message', Object.assign({time:new Date()},data));
+    if(data.msg && data.msg.trim() !== '') {
+      io.emit('message', Object.assign({time: new Date()}, data));
+    }
   });
 
   socket.on('disconnect', function (data) {
@@ -39,6 +39,4 @@ io.on('connection', function (socket) {
 
 });
 
-http.listen(port, ip, function () {
-  console.log('listening on *:'+port);
-});
+httpServer.listen(port, ip, function () { console.log('Listening on port '+port); });
