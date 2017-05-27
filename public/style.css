@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.layout {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #00f;
+}
+.layout .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  background: #fff;
+}
+.layout .main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 2em;
+  background: #fff;
+}
+.chat {
+  font: normal 14px monospace;
+}
+.chat .content li {
+  list-style-type: none;
+}
+.chat .content li .nick {
+  font-weight: bold;
+}
+.chat .content li .nick:after {
+  content: ':';
+}
+.chat .content li .time {
+  color: #aaa;
+}
+.chat .content li .time:before {
+  content: '[';
+}
+.chat .content li .time:after {
+  content: ']';
+}
+.chat .content li.system {
+  color: #aaa;
+}
+.chat .content li.me .message {
+  font-style: italic;
+}
+.chat .content li.me .nick {
+  display: none;
+}
+.inputs {
+  background: #f00;
+}
+.inputs input[type="submit"] {
+  display: none;
+}
+.inputs input[type="text"] {
+  font: normal 14px monospace;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  outline: none;
+  border: none;
+  background: #f0f0f0;
+  padding: 0 0.5em;
+}
+.inputs input[type="text"]:focus {
+  background: #f0f0ff;
+}
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  display: none;
+}
+.modal form {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: inline-block;
+  width: 400px;
+  background: #fff;
+  height: 160px;
+  text-align: center;
+  padding-top: 2em;
+}
+.modal form label {
+  display: block;
+  font-size: 25px;
+}
+.modal form input {
+  border: 1px solid #000;
+  height: 2em;
+  padding: 0 1em;
+  margin-top: 1em;
+}
+.modal form input[type="text"] {
+  width: 80%;
+}
+.modal form input[type="submit"] {
+  background: #000;
+  color: #fff;
+  width: 35%;
+  height: 3em;
+}
+
+/*# sourceMappingURL=style.css.map */

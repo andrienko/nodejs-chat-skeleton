@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simplest chat</title>
+
+    <script type="text/template" id="msg">
+        <li class="<%= cls %>">
+            <span class="time"><%= time %></span>
+            <span class="nick"><%= name %></span>
+            <span class="message"><%= msg %></span>
+        </li>
+    </script>
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+        <div class="main chat">
+            <ul class="content">
+            </ul>
+        </div>
+        <div class="footer">
+            <form class="inputs">
+                <input type="text" id="message" placeholder="Enter message..." autocomplete="off">
+                <input type="submit" autofocus>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal">
+        <form id="user_details">
+            <label for="name">Nickname</label>
+            <input id="name" type="text">
+            <input type="submit" value="Okay">
+        </form>
+    </div>
+
+</body>
+
+
+</html>
