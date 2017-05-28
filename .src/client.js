@@ -9,9 +9,6 @@ $(function(){
     main: $('.main'),
     name_change: $('#name_change'),
     user_details: $('#user_details'),
-    nickname: $('#name'),
-    nickname_save: $('#name_save'),
-    modal:$('.modal'),
 
     message_template: _.template($('#msg').html()),
 
@@ -27,22 +24,6 @@ $(function(){
       });
 
       this.message.focus();
-
-      this.initModal();
-
-    },
-
-    initModal: function () {
-      this.name_change.click(()=>{
-        this.modal.show();
-        this.nickname.focus().val(chat_app.name);
-      });
-
-      this.nickname_save.click(()=>{
-        chat_app.name = this.nickname.val();
-        localStorage['nickname'] = chat_app.name;
-        this.modal.hide();
-      });
     },
 
 

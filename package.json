@@ -27,7 +27,7 @@
   "scripts": {
     "build": "node ./node_modules/gulp/bin/gulp.js --gulpfile ./.config/gulp.js",
     "watch": "node ./node_modules/gulp/bin/gulp.js --gulpfile ./.config/gulp.js watch",
-    "start": "node server.js"
+    "start": "node ./server/server.js"
   },
   "repository": {
     "type": "git",
