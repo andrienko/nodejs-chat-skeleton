@@ -21,7 +21,8 @@
     "object-assign": "^4.1.1",
     "username-generator": "^1.0.3",
     "webpack": "^2.6.1",
-    "webpack-stream": "^3.2.0"
+    "webpack-stream": "^3.2.0",
+    "socket.io-client": "^2.0.1"
   },
   "scripts": {
     "build": "node ./node_modules/gulp/bin/gulp.js --gulpfile ./.config/gulp.js",

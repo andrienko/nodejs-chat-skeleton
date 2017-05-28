@@ -1,5 +1,6 @@
 $(function(){
   const usernameGenerator = require('username-generator');
+  const io = require('socket.io-client');
 
   const ui = {
     form: $('.inputs'),

@@ -2,10 +2,10 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname,'../.src/script.js'),
+  entry: path.resolve(__dirname,'../.src/client.js'),
   output: {
     path: path.resolve(__dirname, '../public/'),
-    filename: 'script.js'
+    filename: 'client.js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({minimize: true, sourceMap: true}),

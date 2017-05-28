@@ -10,7 +10,11 @@ script.
 Chat has simple protection against empty input. Also it has html escaping and /me command support.
 That's pretty much all it can do: no replacements, no swearing filter, no admin feature, no avatars, nothing.
  
-The idea is you should be able to add everything on your own.
+The idea is you should be able to add everything on your own. Any ideas how could I improve the skeleton? Pull requests
+and e-mails are welcome!
+
+Need something even simpler? There's Socket.io's [demo chat](https://github.com/socketio/chat-example) and an
+[article](https://socket.io/get-started/chat/) that explains concepts.
      
 ### building 
 

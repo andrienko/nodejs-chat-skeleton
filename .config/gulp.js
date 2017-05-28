@@ -17,7 +17,7 @@ gulp.task('less', function () {
 
 gulp.task("webpack",function () {
 
-  return gulp.src('../.src/script.js')
+  return gulp.src('../.src/client.js')
     .pipe(webpackStream(require('./webpack.js'),webpack))
     .on('error', function handleError() {
       console.log('Error compiling JS');
@@ -26,7 +26,7 @@ gulp.task("webpack",function () {
     .pipe(gulp.dest('../public'));
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', ['less','webpack'] ,function(){
   gulp.watch('../.src/**/*.less', ['less']);
   gulp.watch('../.src/**/*.js', ['webpack']);
 });
