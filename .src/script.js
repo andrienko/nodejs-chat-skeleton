@@ -97,7 +97,7 @@ $(function(){
 
     connect:function () {
       try {
-        this.socket = io.connect();
+        this.socket = io.connect({query:"name="+this.name});
         this.afterConnect();
       } catch (e) {
         console.log('Could not connect to socket.',e);

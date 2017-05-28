@@ -6,6 +6,8 @@ var io = require('socket.io')(httpServer);
 
 var port = 8083;
 
+var botName = 'System';
+
 server.use(
   express.static(__dirname + '/public')
 );
@@ -15,15 +17,9 @@ server.get('/', function (request, response) {
 });
 
 io.on('connection', function (socket) {
-
-  console.log(socket.conn.remoteAddress + ' connected!');
-
-  socket.emit('message', {
-    cls: 'system',
-    name:'Bot',
-    time:new Date(),
-    msg: "\n\nWelcome! This is the MOTD or something\nServer time is "+(new Date())
-  });
+  socket.emit('message', { cls: 'system', name: botName, time:new Date(),
+    msg: "\n\nWelcome! This is the MOTD or something\nServer time is "+(new Date())}
+  );
 
   socket.on('message_sent', function (data) {
     if(data.msg && data.msg.trim() !== '') {
