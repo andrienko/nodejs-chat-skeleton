@@ -1,8 +1,13 @@
 @foot-height:2em;
+@button-size: @foot-height;
 
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font: normal 16px sans-serif;
 }
 
 .layout{
@@ -82,9 +87,29 @@
     outline:none;
     border:none;
     background: #f0f0f0;
-    padding: 0 0.5em;
+    line-height: @foot-height;
+    padding: 0 @button-size+0.5em 0 0.5em;
     &:focus{
       background: #f0f0ff;
+    }
+  }
+}
+
+.footer{
+  button{
+    width:@button-size;
+    height:@button-size;
+    line-height: @button-size;
+    position: absolute;
+    right: 0;
+    border:none;
+    bottom: 0;
+    text-align: center;
+    font-size:inherit;
+    background: #b7c7e4;
+    outline: none;
+    &:active{
+      background: #fff;
     }
   }
 }
@@ -98,14 +123,15 @@
   background: rgba(0,0,0,0.8);
   z-index: 2000;
   display: none;
-  form{
+
+  .window{
     position: absolute;
     top: 0;bottom: 0;left: 0;right: 0;
     margin: auto;
     display: inline-block;
     width: 400px;
     background: #fff;
-    height: 160px;
+    height: 190px;
     text-align: center;
     padding-top: 2em;
     label{

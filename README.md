@@ -1,8 +1,7 @@
 # Chat skeleton
 --------------------------
 
-A simple realtime chat built on socket.io. No user list (even no username, but some things for you to be able to add
-seting for it in the future, see .modal element and corresponding js). No admins. No logs. Nothing, just messenging.
+A simple realtime chat built on socket.io. No user list. No admins. No logs. Nothing, just messenging.
 
 A good and simple base to start developing your own chat. Babel and webpack already setup, as well as less building via
 gulp. jQuery and lodash already built-in. Output should have index.html file, front-end script, css file and server

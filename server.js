@@ -3,22 +3,22 @@ var server = express();
 var httpServer = require('http').Server(server);
 var io = require('socket.io')(httpServer);
 
-var ip = "127.0.0.1";
-var port = 8083;varusers = {};
+
+var port = 8083;
 
 server.use(
   express.static(__dirname + '/public')
 );
 
-server.get('/', function (req, res) {
-  res.sendfile('index.html');
+server.get('/', function (request, response) {
+  response.sendfile('index.html');
 });
 
 io.on('connection', function (socket) {
 
   console.log(socket.conn.remoteAddress + ' connected!');
 
-  io.emit('message', {
+  socket.emit('message', {
     cls: 'system',
     name:'Bot',
     time:new Date(),
@@ -39,4 +39,4 @@ io.on('connection', function (socket) {
 
 });
 
-httpServer.listen(port, ip, function () { console.log('Listening on port '+port); });
+httpServer.listen(port, function () { console.log('Listening on port '+port); });

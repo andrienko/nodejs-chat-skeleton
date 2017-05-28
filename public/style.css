@@ -1,6 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: normal 16px sans-serif;
 }
 .layout {
   position: absolute;
@@ -77,10 +81,27 @@
   outline: none;
   border: none;
   background: #f0f0f0;
-  padding: 0 0.5em;
+  line-height: 2em;
+  padding: 0 2.5em 0 0.5em;
 }
 .inputs input[type="text"]:focus {
   background: #f0f0ff;
+}
+.footer button {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  position: absolute;
+  right: 0;
+  border: none;
+  bottom: 0;
+  text-align: center;
+  font-size: inherit;
+  background: #b7c7e4;
+  outline: none;
+}
+.footer button:active {
+  background: #fff;
 }
 .modal {
   position: absolute;
@@ -92,7 +113,7 @@
   z-index: 2000;
   display: none;
 }
-.modal form {
+.modal .window {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -102,24 +123,24 @@
   display: inline-block;
   width: 400px;
   background: #fff;
-  height: 160px;
+  height: 190px;
   text-align: center;
   padding-top: 2em;
 }
-.modal form label {
+.modal .window label {
   display: block;
   font-size: 25px;
 }
-.modal form input {
+.modal .window input {
   border: 1px solid #000;
   height: 2em;
   padding: 0 1em;
   margin-top: 1em;
 }
-.modal form input[type="text"] {
+.modal .window input[type="text"] {
   width: 80%;
 }
-.modal form input[type="submit"] {
+.modal .window input[type="submit"] {
   background: #000;
   color: #fff;
   width: 35%;
